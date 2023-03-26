@@ -31,6 +31,11 @@ function GameScreen({ userNumber, onGameOver }) {
     }
   }, [currentGuess, userNumber, onGameOver]);
 
+  useEffect(() => {
+    minBoundary = 1;
+    maxBoundary = 100;
+  }, []);
+
   function nextGuessHandler(direction) {
     if (
       (direction === "lower" && currentGuess < userNumber) ||
@@ -48,7 +53,6 @@ function GameScreen({ userNumber, onGameOver }) {
       minBoundary = currentGuess + 1;
     }
 
-    console.log(minBoundary, maxBoundary);
     const newRndNumber = generateRandomBetween(
       minBoundary,
       maxBoundary,
