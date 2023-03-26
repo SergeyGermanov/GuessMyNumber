@@ -20,8 +20,6 @@ function StarGameScreen({ onPickNumber }) {
   function confirmInputHandler() {
     const chosenNumber = parseInt(enteredNumber);
 
-    console.log(enteredNumber);
-
     if (isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99) {
       Alert.alert(
         "Invalid Number!",
